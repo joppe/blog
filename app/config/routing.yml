@@ -1,0 +1,3 @@
+aap_blog:
+    resource: "@AapBlogBundle/Resources/config/routing.yml"
+    prefix:   /

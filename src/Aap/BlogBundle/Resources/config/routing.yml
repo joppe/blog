@@ -1,0 +1,2 @@
+aap_blog:
+    resource: "@AapBlogBundle/Controller"
