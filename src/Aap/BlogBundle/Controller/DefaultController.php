@@ -1,7 +1,7 @@
 <?php
 /**
- * @author Joppe Aarts <joppe@zicht.nl>
- * @copyright Zicht Online <http://zicht.nl>
+ * @author Joppe Aarts <joppe@apestaartje.info>
+ * @copyright Apestaartje <http://apestaartje.info>
  */
 
 namespace Aap\BlogBundle\Controller;
