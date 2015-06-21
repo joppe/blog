@@ -21,6 +21,10 @@ class Markdown
         $file = new MarkdownFile($path);
         $lexer = new MarkdownLexer($file->getContents());
 
-
+        $token = $lexer->nextToken();
+        while (MarkdownLexer::EOF !== $token) {
+            echo $token;
+            $token = $lexer->nextToken();
+        }
     }
 }
