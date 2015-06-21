@@ -19,7 +19,7 @@ abstract class LL1Lexer
     /**
      * @var array
      */
-    protected $tokenNames = array(
+    protected static $tokenNames = array(
         0 => 'n/a',
         self::EOF => 'EOF'
     );
@@ -42,7 +42,7 @@ abstract class LL1Lexer
     /**
      * @var string
      */
-    private $char;
+    public $char;
 
     /**
      * Lexer constructor.
