@@ -37,7 +37,7 @@ abstract class LL1Lexer
     /**
      * @var int
      */
-    private $index;
+    protected $index;
 
     /**
      * @var string
