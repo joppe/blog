@@ -54,7 +54,7 @@ abstract class LL1Lexer
         $this->input = $input;
         $this->length = strlen($this->input);
         $this->index = 0;
-        $this->char = '';
+        $this->char = $this->getCharAtIndex($this->index);
     }
 
     /**
@@ -115,11 +115,11 @@ abstract class LL1Lexer
      */
     public function getTokenName($tokenType)
     {
-        if (false === isset($this->tokenNames[$tokenType])) {
-            throw new \Exception('Unsuported token type %d', $tokenType);
+        if (false === isset(self::$tokenNames[$tokenType])) {
+            throw new \Exception(sprintf('Unsuported token type %d', $tokenType));
         }
 
-        return $this->tokenNames[$tokenType];
+        return self::$tokenNames[$tokenType];
     }
 
     /**
