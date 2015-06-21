@@ -22,8 +22,8 @@ class Markdown
         $lexer = new MarkdownLexer($file->getContents());
 
         $token = $lexer->nextToken();
-        while (MarkdownLexer::EOF !== $token) {
-            echo $token;
+        while (MarkdownLexer::EOF_TYPE !== $token->getType()) {
+            echo $token . "\n";
             $token = $lexer->nextToken();
         }
     }
