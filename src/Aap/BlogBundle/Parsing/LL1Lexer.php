@@ -12,16 +12,21 @@ namespace Aap\BlogBundle\Parsing;
 abstract class LL1Lexer
 {
     /**
+     * @const string
+     */
+    const EOF = '-1';
+
+    /**
      * @const int
      */
-    const EOF = 1;
+    const EOF_TYPE = 1;
 
     /**
      * @var array
      */
     protected static $tokenNames = array(
         0 => 'n/a',
-        self::EOF => 'EOF'
+        self::EOF_TYPE => 'EOF'
     );
 
     /**
