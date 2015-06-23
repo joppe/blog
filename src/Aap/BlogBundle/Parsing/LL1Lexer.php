@@ -21,13 +21,18 @@ abstract class LL1Lexer
     /**
      * @const int
      */
+    const INVALID_TOKE_TYPE = 0;
+
+    /**
+     * @const int
+     */
     const EOF_TYPE = 1;
 
     /**
      * @var array
      */
     protected static $tokenNames = array(
-        0 => 'n/a',
+        self::INVALID_TOKE_TYPE => 'n/a',
         self::EOF_TYPE => 'EOF'
     );
 

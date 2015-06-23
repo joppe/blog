@@ -16,12 +16,12 @@ class BacktrackParser
     /**
      * @var array
      */
-    private $lookahead;
+    protected $lookahead;
 
     /**
      * @var LL1Lexer
      */
-    private $input;
+    protected $input;
 
     /**
      * @var array
@@ -31,7 +31,7 @@ class BacktrackParser
     /**
      * @var int
      */
-    private $index;
+    protected $index;
 
     /**
      * @param LL1Lexer $input
