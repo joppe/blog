@@ -8,6 +8,8 @@ namespace Aap\BlogBundle\Parsing;
 
 /**
  * Class LLkParser
+ *
+ * @package Aap\BlogBundle\Parsing
  */
 class LLkParser
 {

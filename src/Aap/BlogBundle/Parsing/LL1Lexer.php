@@ -8,6 +8,8 @@ namespace Aap\BlogBundle\Parsing;
 
 /**
  * Class LL1Lexer
+ *
+ * @package Aap\BlogBundle\Parsing
  */
 abstract class LL1Lexer
 {

@@ -8,6 +8,8 @@ namespace Aap\BlogBundle\Parsing;
 
 /**
  * Class BacktrackParser
+ *
+ * @package Aap\BlogBundle\Parsing
  */
 class BacktrackParser
 {

@@ -8,6 +8,8 @@ namespace Aap\BlogBundle\Parsing;
 
 /**
  * Class Token
+ *
+ * @package Aap\BlogBundle\Parsing
  */
 class Token
 {
