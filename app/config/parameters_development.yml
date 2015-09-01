@@ -1,0 +1,26 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: mysql
+    database_port: ~
+    database_name: blog
+    database_user: dev
+    database_password: ~
+
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: ~
+    mailer_password: ~
+
+    secret: R3tteketETTe44t!!
+
+    google_analytics: |
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-67037512-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>

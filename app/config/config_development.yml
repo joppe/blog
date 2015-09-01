@@ -1,11 +1,10 @@
 imports:
     - { resource: config.yml }
+    - { resource: parameters_development.yml }
 
 framework:
-    router:
-        resource: "%kernel.root_dir%/config/routing_development.yml"
-        strict_requirements: true
-    profiler: { only_exceptions: false }
+    router:   { resource: "%kernel.root_dir%/config/routing_development.yml" }
+    profiler: { only_exceptions: true }
 
 web_profiler:
     toolbar: true
@@ -40,9 +39,6 @@ monolog:
         #chromephp:
         #    type:   chromephp
         #    level:  info
-
-assetic:
-    use_controller: true
 
 #swiftmailer:
 #    delivery_address: me@example.com
