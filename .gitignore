@@ -12,3 +12,4 @@
 /composer.phar
 .idea/
 vendor/
+/src/Aap/BlogBundle/Resources/public/css/*
