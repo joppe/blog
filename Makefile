@@ -41,7 +41,7 @@ npm:
 
 composer:
 	@echo "Install composer packages"
-	@cd $(ROOT_DIR) && composer install --symlink --env=$(ENV)
+	@cd $(ROOT_DIR) && composer install
 
 setup: composer npm bower sass
 	@echo "Setup done"
