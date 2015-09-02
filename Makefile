@@ -52,10 +52,13 @@ simulate: PUBLIC_DIR := $(BUILD_DIR)/$(PUBLIC_DIR)
 simulate: ROOT_DIR := $(BUILD_DIR)/$(ROOT_DIR)
 simulate: ENV := production
 simulate: checkout setup
-	rsync --verbose --recursive --links --dry-run --compress --checksum --delete --exclude-from=rsync.exclude $(ROOT_DIR) $(TARGET_ROOT_DIR)
+	@echo "Deploy - DRY RUN"
+	@rsync --verbose --recursive --links --dry-run --compress --checksum --delete --exclude-from=rsync.exclude $(ROOT_DIR) $(TARGET_ROOT_DIR)
 
 deploy: PUBLIC_DIR := $(BUILD_DIR)/$(PUBLIC_DIR)
 deploy: ROOT_DIR := $(BUILD_DIR)/$(ROOT_DIR)
 deploy: ENV := production
 deploy: checkout setup
-	rsync --verbose --recursive --links --compress --checksum --delete --exclude-from=rsync.exclude $(ROOT_DIR) $(TARGET_ROOT_DIR)
+	@echo "Deploy"
+	@cd $(ROOT_DIR) && symlinks -cr .
+	@rsync --verbose --recursive --links --compress --checksum --delete --exclude-from=rsync.exclude $(ROOT_DIR) $(TARGET_ROOT_DIR)
