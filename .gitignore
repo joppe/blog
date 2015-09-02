@@ -13,3 +13,5 @@
 .idea/
 vendor/
 /src/Aap/BlogBundle/Resources/public/css/*
+node_modules/
+src/Aap/BlogBundle/Resources/public/.sass-cache/
