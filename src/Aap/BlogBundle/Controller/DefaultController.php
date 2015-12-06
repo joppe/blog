@@ -8,6 +8,8 @@ namespace Aap\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Parsedown;
 
 /**
  * Class DefaultController
@@ -17,12 +19,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends Controller
 {
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      *
      * @Route("/")
      */
     public function indexAction()
     {
-        return $this->render('AapBlogBundle:Default:index.html.twig');
+        $posts = $this->get('aap_blog.blog_post');
+
+        return $this->render('AapBlogBundle:Default:index.html.twig', array(
+            'post' => $posts->getLastPost()
+        ));
     }
 }

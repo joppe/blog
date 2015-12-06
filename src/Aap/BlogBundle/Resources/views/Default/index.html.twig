@@ -1,23 +1,21 @@
 {% extends '::base.html.twig' %}
 
+{% import 'AapBlogBundle:macros:component.html.twig' as ui %}
+
 {% block main %}
+    {# @var post \Aap\BlogBundle\Entity\Post #}
     <div class="container">
         <div class="jumbotron">
             <h1>Apestaartje blog</h1>
             <p class="lead">Coming soon</p>
         </div>
 
-        <ul class="keywords">
-            <li>php</li>
-            <li>javascript</li>
-            <li>es6</li>
-            <li>Backbone</li>
-            <li>Underscore</li>
-            <li>Babel</li>
-            <li>Karma</li>
-            <li>Jasmine</li>
-            <li>jQuery</li>
-            <li>Symfony</li>
-        </ul>
+        {{
+            ui.component('post', {
+                date: post.date,
+                text: post.text,
+                keywords: post.keywords
+            })
+        }}
     </div>
 {% endblock %}

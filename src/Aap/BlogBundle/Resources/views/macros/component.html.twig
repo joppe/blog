@@ -1,0 +1,3 @@
+{% macro component(name, data) %}
+    {% include 'AapBlogBundle::components/' ~ name ~ '.html.twig' with data %}
+{% endmacro %}

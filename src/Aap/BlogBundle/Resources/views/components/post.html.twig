@@ -1,0 +1,15 @@
+<article class="row post">
+    <div class="col-xs-12  col-md-8  s-parsed">
+        <time class="post__date">{{ date | date('Y-m-d') }}</time>
+        {{ text | raw }}
+    </div>
+
+    <div class="col-xs-12  col-md-4">
+        <h2>Keywords</h2>
+        <ul>
+            {% for keyword in keywords %}
+                <li>{{ keyword }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</article>
