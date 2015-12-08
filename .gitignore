@@ -12,6 +12,7 @@
 /composer.phar
 .idea/
 vendor/
-/src/Aap/BlogBundle/Resources/public/css/*
+src/Aap/BlogBundle/Resources/public/css/*
+src/Aap/BlogBundle/Resources/public/vendor
 node_modules/
 src/Aap/BlogBundle/Resources/public/.sass-cache/

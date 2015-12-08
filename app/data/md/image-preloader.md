@@ -33,4 +33,45 @@ The Makefile I used for this project you can find on [github.com/joppe/image-pre
 Get babel with npm `npm install babel`. I always transpile es2015 before loading it in the browser by using a watcher `node_modules/babel/bin/babel.js src --watch --stage 1 --out-dir dist --modules system`. The advantage is that it loads faster, otherwise all the JavaScript has to be transpiled in the browser.
 
 
+## The script
+
+To determine if a given image element is loaded there are a few options.
+The complete property of an image tells if the image is already loaded.
+If the browser does not support that property then there is the possibility to check the naturalWidth property. If the naturalWidth property is defined, the browser knows it's size and therefore the image is loaded.
+
+```
+let isLoaded = false;
+
+if (this.image.complete || (typeof this.image.naturalWidth !== 'undefined' && this.image.naturalWidth > 0)) {
+    isLoaded = true;
+}
+
+return isLoaded;
+```
+
 ## Demo
+
+<div class="well">
+    <p>
+        <a href="javascript:void(null);" class="btn btn-primary">Start preloading</a>
+    </p>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <img src="http://lorempixel.com/400/200/sports/1/" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lorempixel.com/400/200/sports/2/" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lorempixel.com/400/200/sports/3/" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-xs-6">
+            <img src="http://lorempixel.com/400/200/sports/5/" style="width: 100%; height: auto;">
+        </div>
+    </div>
+</div>
