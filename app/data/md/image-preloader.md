@@ -35,9 +35,9 @@ Get babel with npm `npm install babel`. I always transpile es2015 before loading
 
 ## The script
 
-To determine if a given image element is loaded there are a few options.
-The complete property of an image tells if the image is already loaded.
-If the browser does not support that property then there is the possibility to check the naturalWidth property. If the naturalWidth property is defined, the browser knows it's size and therefore the image is loaded.
+There are a few options to determine if a given image element is loaded.
+The `complete` property of an image tells if the image is already loaded, the `load` event is already fired or the image was loaded from the browsers cache.
+If the browser does not support the `complete` property then there is the possibility to check the `naturalWidth` property. If the `naturalWidth` property is defined, the browser knows it's size and therefore the image is loaded.
 
 ```
 let isLoaded = false;
