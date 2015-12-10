@@ -53,10 +53,10 @@ return isLoaded;
 
 <div class="well">
     <p>
-        <a href="javascript:void(null);" class="btn btn-primary">Start preloading</a>
+        <a href="javascript:void(null);" class="btn btn-primary js-start-preloading">Start preloading</a>
     </p>
     <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+        <div class="progress-bar  js-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
             <span class="sr-only"></span>
         </div>
     </div>
@@ -75,3 +75,6 @@ return isLoaded;
         </div>
     </div>
 </div>
+<script type="text/javascript">
+System.import('js/demo-img-preloader.js');
+</script>

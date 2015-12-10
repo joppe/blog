@@ -1,11 +1,11 @@
 /*global System*/
 
 System.config({
-    baseURL: '../',
+    baseURL: 'bundles/aapblog/',
 
     transpiler: 'babel',
 
     paths: {
-        'image-preloader/*': 'dist/image-preloader/*.js'
+        'image-preloader/*': 'vendor/image-preloader/dist/image-preloader/*'
     }
 });

@@ -11,6 +11,12 @@
         <meta name="description" content="Blog over php/javascript/mysql/linux">
 
         {{ google_analytics | raw }}
+
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('bundles/aapblog/vendor/es6-module-loader/dist/es6-module-loader.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/aapblog/vendor/system.js/dist/system.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/aapblog/js/system.conf.js') }}"></script>
+        {% endblock %}
     </head>
 
     <body>
@@ -40,11 +46,6 @@
                     </footer>
                 </div>
             {% endblock %}
-        {% endblock %}
-        {% block javascripts %}
-            <script type="text/javascript" src="{{ asset('bundles/aapblog/vendor/es6-module-loader/dist/es6-module-loader.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/aapblog/vendor/system.js/dist/system.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/aapblog/js/system.conf.js') }}"></script>
         {% endblock %}
     </body>
 </html>

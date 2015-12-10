@@ -31,6 +31,14 @@ sass:
 	@echo "Compile SASS"
 	@cd $(PUBLIC_DIR) && sass --style=compact --update --force --scss --no-cache sass:css
 
+babel:
+	@echo "Transpile javascript"
+	$(PWD)/node_modules/babel/bin/babel.js $(PUBLIC_DIR)/src --stage 1 --out-dir $(PUBLIC_DIR)/js --modules system
+
+babel-watch:
+	@echo "Transpile javascript"
+	$(PWD)/node_modules/babel/bin/babel.js $(PUBLIC_DIR)/src --stage 1 --out-dir $(PUBLIC_DIR)/js --modules system --watch
+
 bower:
 	@echo "Install bower packages"
 	@cd $(ROOT_DIR) && bower install
