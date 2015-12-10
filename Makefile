@@ -51,7 +51,7 @@ composer:
 	@echo "Install composer packages"
 	@cd $(ROOT_DIR) && composer install
 
-setup: composer npm bower sass
+setup: composer npm bower sass babel
 	@echo "Setup done"
 
 build: checkout
