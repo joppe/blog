@@ -11,3 +11,4 @@ rsync.exclude
 /app/logs/
 /web/media/
 /web/sass/
+/node_modules/
