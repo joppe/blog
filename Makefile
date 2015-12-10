@@ -6,7 +6,7 @@ ROOT_DIR := ./
 BUILD_DIR := build
 PUBLIC_DIR := src/Aap/BlogBundle/Resources/public
 GIT_URL := https://github.com/joppe/blog.git
-SSH_URL := joppe@apestaartje.info
+SSH_URL := apesblog@apestaartje.info
 TARGET_ROOT_DIR := $(SSH_URL):/home/apesblog/public_html
 
 # ifeq ($(ENV),production)
