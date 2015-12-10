@@ -19,6 +19,6 @@
         "jquery": "1",
         "backbone": "~1.2.1",
         "bootstrap-sass-official": "~3.3.5",
-        "image-preloader": "https://github.com/joppe/image-preloader.git"
+        "image-preloader": "https://github.com/joppe/image-preloader.git#2.0.1"
     }
 }
