@@ -7,7 +7,8 @@ BUILD_DIR := build
 PUBLIC_DIR := src/Aap/BlogBundle/Resources/public
 GIT_URL := https://github.com/joppe/blog.git
 SSH_URL := apesblog@apestaartje.info
-TARGET_ROOT_DIR := $(SSH_URL):/home/apesblog/public_html
+REMOTE_ROOT_DIR := /home/apesblog/public_html
+TARGET_ROOT_DIR := $(SSH_URL):$(REMOTE_ROOT_DIR)
 
 # ifeq ($(ENV),production)
 # endif
@@ -70,3 +71,5 @@ deploy: checkout setup
 	@echo "Deploy"
 	@cd $(ROOT_DIR) && symlinks -cr .
 	@rsync --verbose --recursive --links --compress --checksum --delete --exclude-from=rsync.exclude $(ROOT_DIR) $(TARGET_ROOT_DIR)
+	@echo "Clear remote cache"
+	@ssh $(SSH_URL) "cd $(REMOTE_ROOT_DIR) && php app/console --env=production cache:clear"
