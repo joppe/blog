@@ -1,7 +1,7 @@
 /*global System*/
 
 System.config({
-    baseURL: 'bundles/aapblog/',
+    baseURL: '/bundles/aapblog/',
 
     transpiler: 'babel',
 
