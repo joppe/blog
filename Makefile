@@ -1,5 +1,6 @@
 SHELL := /bin/bash
 
+PWD := $(shell pwd)
 ENV := development
 BASE_DIR := ./
 ROOT_DIR := ./
