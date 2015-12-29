@@ -22,11 +22,26 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('aap_blog');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode = $treeBuilder->root('aap_blog');
+        $rootNode
+            ->children()
+                ->arrayNode('posts')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('date')->end()
+                            ->scalarNode('slug')->end()
+                            ->scalarNode('title')->end()
+                            ->scalarNode('description')->end()
+                            ->arrayNode('keywords')
+                                ->prototype('scalar')->end()
+                            ->end()
+                            ->scalarNode('md')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

@@ -1,5 +1,0 @@
-posts:
-  -
-    date: 2015-12-06
-    keywords: [es2015, es6, javascript, babel, systemjs, vanillajs]
-    md: app/data/md/image-preloader.md

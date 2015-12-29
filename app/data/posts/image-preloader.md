@@ -1,4 +1,4 @@
-# Image preloader in es2015
+# An image preloader in es2015 syntax
 
 Since Flash is dead I see that a lot of techniques that were common in Actionscript, are now used in JavaScript projects. One of those techniques is the preloading of images. 
 The goal of preloading is to measure the dimensions and to be sure the image are directly available when you want to render them.

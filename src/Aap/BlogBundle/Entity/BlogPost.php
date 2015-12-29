@@ -9,16 +9,21 @@ namespace Aap\BlogBundle\Entity;
 use DateTime;
 
 /**
- * Class Post
+ * Class BlogPost
  *
  * @package Aap\BlogBundle\Entity
  */
-class Post
+class BlogPost
 {
     /**
      * @var DateTime
      */
     private $date;
+
+    /**
+     * @var string
+     */
+    private $slug;
 
     /**
      * @var array
@@ -29,6 +34,11 @@ class Post
      * @var string
      */
     private $title;
+
+    /**
+     * @var string
+     */
+    private $description;
 
     /**
      * @var string
@@ -107,6 +117,44 @@ class Post
     public function setText($text)
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return $this
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
 
         return $this;
     }

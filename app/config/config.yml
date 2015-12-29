@@ -69,3 +69,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+aap_blog:
+    posts:
+        -
+            date: 2015-12-06
+            slug: image-preloader
+            title: Image preloader
+            description: An image preloader written in es2015 syntax
+            keywords: [es2015, es6, javascript, babel, systemjs, vanillajs]
+            md: app/data/posts/image-preloader.md

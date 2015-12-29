@@ -13,13 +13,16 @@
         <service id="aap_blog.markdown" class="Aap\BlogBundle\Service\Markdown\Markdown">
         </service>
 
-        <service id="aap_blog.blog_post_factory" class="Aap\BlogBundle\Service\BlogPost\BlogFactory">
+        <service id="aap_blog.blog_post_factory" class="Aap\BlogBundle\Entity\Factory\BlogFactory">
             <argument>%aap_blog.root_dir%</argument>
         </service>
 
-        <service id="aap_blog.blog_post" class="Aap\BlogBundle\Service\BlogPost\BlogPost">
-            <argument type="service" id="aap_blog.blog_post_factory"></argument>
-            <argument>%aap_blog.posts%</argument>
+        <service id="aap_blog.blog_post_repository" class="Aap\BlogBundle\Entity\Repository\BlogRepository">
+            <argument type="service" id="aap_blog.blog_post_factory"/>
+        </service>
+
+        <service id="aap_blog.blog_post_manager" class="Aap\BlogBundle\Service\BlogPost\BlogPostManager">
+            <argument type="service" id="aap_blog.blog_post_repository"/>
         </service>
     </services>
 </container>

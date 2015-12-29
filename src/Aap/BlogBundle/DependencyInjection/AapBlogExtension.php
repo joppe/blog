@@ -28,5 +28,10 @@ class AapBlogExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        if ($container->hasDefinition('aap_blog.blog_post_repository')) {
+            $definition = $container->getDefinition('aap_blog.blog_post_repository');
+            $definition->addMethodCall('setData', array($config['posts']));
+        }
     }
 }
