@@ -2,8 +2,8 @@
 
 ## Introduction
 
-When I wanted to use [Google Maps](https://developers.google.com/maps/documentation/javascript/3.exp/reference) in an es6 project, I ran into the problem that I didn't knew how to include the script.
-This is because when you include the script (`https://maps.googleapis.com/maps/api/js`) it does not provide all the JavaScript directly, it creates a couple of new script tags that load other JavaScript files. When all these scripts are loaded a callback function is called that indicates that Google Maps is ready to use. The name of the callback function that is called can be set by defining it as a get parameter in the request for the initial script e.g. `https://maps.googleapis.com/maps/api/js?callback=foo`, when the script is ready, the function `foo` will be called.
+When I wanted to use [Google Maps](https://developers.google.com/maps/documentation/javascript/3.exp/reference) in an es6 project, I ran into the problem that I didn't know how to include the script.
+When you include the script (`https://maps.googleapis.com/maps/api/js`), it does not provide all the JavaScript directly, it creates a couple of new script tags that load other JavaScript files. When all these scripts are loaded, a callback function is called that indicates that Google Maps is ready to use. The name of that callback function can be set by defining it as a GET parameter in the request for the initial script e.g. `https://maps.googleapis.com/maps/api/js?callback=foo`. When the script is ready, the function `foo` will be called.
 Luckily it is possible to define custom loaders in es6. SystemJS supports all of these features and makes it easy to make custom loaders for specific scripts by creating plugins.
 
 
@@ -23,10 +23,10 @@ Each step/hook can either return a result directly, or a promise for the result 
 
 ## SystemJS plugin
 
-To create a loader for Google Maps, we have to hook into the fetch step. Because when we fetch the url and the script is loaded, the dynamicly created script tags are not loaded. A promise must be returned that will resolve when the callback function is called by the Google Maps script.
-When the fetching of the source is successful the `then` method of the returned promise is invoked and returns the string `module.exports = google`. The `module.exports = google` string is used as input for the next step, the `translate` step, in the loader pipeline. With this string we tell that the global `google`, that is available after loading the Google Maps api, will be exported using [CommonJS syntax](https://github.com/systemjs/systemjs/blob/master/docs/module-formats.md#module-format-detection).
+To create a loader for Google Maps, we have to hook into the fetch step. Because when we fetch the url and the script is loaded, the dynamically created script tags are not loaded. A promise must be returned that will resolve when the callback function is called by the Google Maps script.
+When the fetching of the source is successfull, the `then` method of the returned promise is invoked and returns the string `module.exports = google`. The `module.exports = google`. That string is used as input for the next step — `translate` — in the loader pipeline. With this string we tell that the global `google`, that is available after loading the Google Maps API, will be exported using [CommonJS syntax](https://github.com/systemjs/systemjs/blob/master/docs/module-formats.md#module-format-detection).
 
-The use of the plugin can be done in two ways:
+The plugin can be used in two ways:
 
 - When configuring SystemJS.
     ```
@@ -51,9 +51,9 @@ The use of the plugin can be done in two ways:
 
 ## The result
 
-I have created a [plugin](https://github.com/joppe/google-maps-loader) for SystemJS to load Google Maps, it is heavily inspired by the plugin from [Heinrich Filter](https://github.com/HeinrichFilter/systemjs-plugin-googlemaps/blob/master/googlemaps.js). I could have just used his script, but I wanted to know how it works :) so I wrote my own.
+I have created a [plugin](https://github.com/joppe/google-maps-loader) for SystemJS to load Google Maps. It is heavily inspired by the plugin from [Heinrich Filter](https://github.com/HeinrichFilter/systemjs-plugin-googlemaps/blob/master/googlemaps.js). I could have just used his script, but I wanted to know how it works :) so I wrote my own.
 
-To use the plugin configure SystemJS.
+To use the plugin, configure SystemJS.
 
 ```
 System.config({
@@ -101,7 +101,7 @@ location /google-maps {
 }
 ```
 
-Now the google maps api can be loaded by this url `http://localhost/google-maps/js` instead of `http://maps.googleapis.com/maps/api/js`.
+Now the Google Maps API can be loaded by this url `http://localhost/google-maps/js` instead of `http://maps.googleapis.com/maps/api/js`.
 The header is still needed, because the karma server is on localhost:9876 and therefore not the same domain as localhost:80.
 
 
