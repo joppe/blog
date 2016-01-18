@@ -79,3 +79,10 @@ aap_blog:
             description: An image preloader written in es2015 syntax
             keywords: [es2015, es6, javascript, babel, systemjs, vanillajs]
             md: app/data/posts/image-preloader.md
+        -
+            date: 2015-12-29
+            slug: module-loader-for-google-maps
+            title: A module loader for Google Maps
+            description: A plugin for SystemJS to load Google Maps
+            keywords: [es2015, es6, javascript, babel, systemjs, google maps, module loader]
+            md: app/data/posts/module-loader-for-google-maps.md
