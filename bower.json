@@ -1,0 +1,27 @@
+{
+  "name": "boilerplate",
+  "description": "Project boilerplate",
+  "main": "index.js",
+  "authors": [
+    "Joppe Aarts"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "JavaScript",
+    "TypeScript"
+  ],
+  "homepage": "https://github.com/joppe/blog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "redux": "^3.6.0",
+    "preact": "^7.2.0",
+    "system.js": "^0.20.3",
+    "tslib": "^1.5.0"
+  }
+}
