@@ -1,4 +1,4 @@
-import {h, render} from './../node_modules/preact/dist/preact';
+import {h, render} from 'preact';
 
 render(
     <div>Test</div>,
