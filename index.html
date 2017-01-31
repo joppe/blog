@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Blog</title>
-        <script src="vendor/system.js/dist/system.js"></script>
+        <script src="node_modules/systemjs/dist/system.js"></script>
         <script src="system.conf.js"></script>
+        <script>
+            System.import('bundle');
+        </script>
     </head>
 
     <body>
