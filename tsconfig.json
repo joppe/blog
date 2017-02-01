@@ -1,9 +1,14 @@
 {
     "compilerOptions": {
+        "allowJs": true,
+        "baseUrl": ".",
         "jsx": "react",
-        "jsxFactory": "preact.h",
+        "jsxFactory": "h",
         "module": "system",
-        "outFile": "main.js",
+        "outFile": "dist/main.js",
+        "paths": {
+            "node_modules/preact/src/preact": ["node_modules/preact/src/preact.js"]
+        },
         "target": "es5"
     },
     "files": [

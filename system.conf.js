@@ -1,3 +1,7 @@
 SystemJS.config({
-    defaultJSExtensions: true
+    defaultJSExtensions: true,
+
+    map: {
+        'src/main': 'dist/main.js'
+    }
 });
