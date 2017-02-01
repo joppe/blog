@@ -17,7 +17,6 @@
   "devDependencies": {
     "@types/jasmine": "^2.5.37",
     "babel-polyfill": "^6.22.0",
-    "bower": "^1.8.0",
     "jasmine-core": "^2.3.4",
     "karma": "^1.4.0",
     "karma-jasmine": "^1.1.0",
@@ -30,6 +29,7 @@
     "typings": "^2.1.0"
   },
   "dependencies": {
+    "preact": "^7.1.0",
     "redux": "^3.6.0",
     "systemjs": "^0.19.40"
   }

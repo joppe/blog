@@ -1,18 +1,14 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
-        "experimentalDecorators": true,
-        "importHelpers": true,
         "jsx": "react",
-        "jsxFactory": "h",
+        "jsxFactory": "preact.h",
         "module": "system",
-        "outFile": "web/js/main.js",
-        "paths": {
-        },
-        "removeComments": true,
-        "sourceMap": true,
+        "outFile": "main.js",
         "target": "es5"
     },
+    "files": [
+        "node_modules/preact/src/preact.d.ts"
+    ],
     "include": [
         "src/**/*"
     ]

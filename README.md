@@ -1,0 +1,1 @@
+Working example of preact, where preact is loaded as global in the index.html.
